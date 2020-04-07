@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Video Game Recommendation</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="shortcut icon" href="/static/images/lstm.ico">
+
+
+
+</head>
+
+<body {background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}>
+
+  <div class="container">
+    <h1>
+      <center>Recommending Nintendo Switch Games with SVD</center>
+    </h1>
+
+    {% block content %}
+    {% for message in form.Rank1.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.Rank2.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.Rank3.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.Rank4.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form method=post>
+
+      {{ form.username.label }}
+      {{ form.username }}
+
+      {{ form.Rank1.label }}
+      {{ form.Rank1 }}
+
+      {{ form.Rank2.label }}
+      {{ form.Rank2 }}
+
+      {{ form.Rank3.label }}
+      {{ form.Rank3 }}
+
+      {{ form.Rank4.label }}
+      {{ form.Rank4 }}
+
+      {{ form.submit }}
+    </form>
+    {% endblock %}
+
+  </div>
+</body>
+
+</html>
